@@ -1,0 +1,160 @@
+/* Globales */
+*::after,
+*::before,
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:monospace;
+
+}
+
+body{
+    background-image: linear-gradient(90deg, #00000079, #00000079), url("img/fondo.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1800px;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0 auto;
+    max-width: 1200px;
+    line-height: 1.5;
+
+}
+
+
+/* Header */
+header{
+    display: center;
+    justify-content: space-between;
+    padding: 30px 0 40px 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.count-products{
+    position: absolute;
+    top: 55%;
+    right: 0;
+    
+    
+}
+
+
+.container-cart-products{
+    position: absolute;
+    top: 50px;
+    right: 0;
+
+    background-color: #ffffff;
+    width: 400px;
+    z-index: 1;
+    box-shadow: 0 10px 20px #ffffff;
+    border-radius: 10px;
+}
+
+.cart-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    border-bottom: 1px solid rgb(250, 250, 250);
+    
+
+}
+
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+    
+}
+
+.titulo-producto-carrito{
+    font-size: 20px;
+}
+/* Main: tarjeta */
+.container-items{
+    display: grid;
+    /* que se vea de a 4 y separar de 20*/
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+/*borde con sombra*/
+.item{
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+.item:hover{
+    box-shadow: 0 10px 20px #ffff;
+    color:rgb(255, 0, 0);
+}
+/*tamaño de imagen*/
+.item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
+}
+/*amplia tarjeta*/
+.item figure{
+    overflow: hidden;
+}
+
+/*amplia tarjeta*/
+.item:hover img{
+    transform: scale(1.2);
+}
+/*info*/
+.info-product{
+    padding: 15px 30px;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price{
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.info-product button{
+    background: black;
+    cursor: pointer;
+    border: none;
+    padding: 16px 16px;
+    color: azure;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+}
+button:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+    background-size: 800%;
+    border-radius: 12px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
